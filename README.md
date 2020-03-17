@@ -8,6 +8,14 @@ https://tianchi.aliyun.com/competition/entrance/231762/introduction
 最终得分和排名为44 /133.40，参赛人数为1175（rank5%）
 
 ### 文件说明
+需要安装的包：（python3）
+> jieba  
+pypinyin  
+numpy   
+editdistance  
+fasttext  
+gensim  
+
 ├── README.md &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 这篇说明文档<br>
 ├── benchmark_texts.txt &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 示例输入文本，用来读取后生成提交结果<br>
 ├── requirements.txt    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | 在此填写需要的Python依赖包<br>
