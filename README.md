@@ -3,7 +3,7 @@
 ### 比赛链接
 https://tianchi.aliyun.com/competition/entrance/231762/introduction
 ### 方案概述和排名
-比赛方案为：字典检测+形似字/音似字/拼音攻击。针对每一条原始样本生成512条攻击候选样本，再选取得分最高的句子作为攻击选项。<br>
+比赛方案为：字典检测+形似字/音似字/拼音/拆字攻击。针对每一条原始样本生成512条攻击候选样本，再选取得分最高的句子作为攻击选项。<br>
 整个方案比较关键的是data/mynewword3.json  
 他提供了2w字的汉字基本信息。例如：
 ```
@@ -25,6 +25,8 @@ editdistance
 fasttext  
 gensim  
 
+此外，你需要从官网下载以下这三个模块：distance_module，reference_model，preprocessing_module，并将其放置于项目路径下。
+
 ├── README.md &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 这篇说明文档<br>
 ├── benchmark_texts.txt &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 示例输入文本，用来读取后生成提交结果<br>
 ├── requirements.txt    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | 在此填写需要的Python依赖包<br>
@@ -36,9 +38,9 @@ gensim
 ├── lzk_detect_1.py   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 标记原始字符串的脏话。2为必改，1为脏话，0为正常<br>
 ├── lzk_disturb_2.py	&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 扰动函数，输入标记序列，输出所有可能攻击<br>
 ├── lzk_calculate_1.py &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | 根据所有可能(512条)，计算p最高并返回<br>
-├── distance_module  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | 比赛方提供的计算[句子相似度模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
-├── reference_model   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 比赛方提供的[脏话分类模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
-└── preprocessing_module &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 比赛方提供的[句子预处理模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
+├── distance_module  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | （需要手动下载）比赛方提供的计算[句子相似度模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
+├── reference_model   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | （需要手动下载）比赛方提供的[脏话分类模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
+└── preprocessing_module &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| （需要手动下载）比赛方提供的[句子预处理模块](https://tianchi.aliyun.com/competition/entrance/231762/information)<br>
 ##### 数据
 ├── small.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			| 小样本脏话测试<br>
 ├── data/abuse_dict.json	&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	| 脏话词典<br>
