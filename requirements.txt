@@ -1,0 +1,6 @@
+jieba
+pypinyin
+numpy
+editdistance
+fasttext
+gensim
